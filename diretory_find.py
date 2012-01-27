@@ -2,7 +2,7 @@
 #
 # Diretory Find
 # Coded By Twi John
-#
+
 
 import httplib
 import sys, string, itertools,re
