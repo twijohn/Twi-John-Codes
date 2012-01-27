@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+#Coded By Twi John
 import socket
 import sys, string
 from itertools import product
