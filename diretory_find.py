@@ -51,15 +51,16 @@ while x != True:
      					
 			print(''.join(word))
 			dir1 = (''.join(word))
-			diretory += dir1+exten 
-			conn.request("HEAD",diretory)
+			diretoryf = diretory+dir1+exten 
+			print host+diretoryf
+			conn.request("HEAD",diretoryf)
                         r1 = conn.getresponse()
 			erro = str(r1.status)
 			if not re.search(erro ,"404"):
  				x = True	
-				print("Dir :"+ str(diretory))
+				print("Dir :"+ str(diretoryf))
 				f = open("dirs.txt","a+")
-				f.write(host+diretory+"\n")
+				f.write(host+diretoryf+"\n")
                                 f.close()
 		     except httplib.error:
 			conn.close()
